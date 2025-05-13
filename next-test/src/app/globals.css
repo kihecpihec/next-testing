@@ -25,29 +25,29 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@keyframes grain {
-  0% { transform: translate(0, 0); }
-  10% { transform: translate(-1px, 1px); }
-  20% { transform: translate(-2px, -1px); }
-  30% { transform: translate(1px, -2px); }
-  40% { transform: translate(1px, 2px); }
-  50% { transform: translate(-1px, 1px); }
-  60% { transform: translate(-2px, 2px); }
-  70% { transform: translate(2px, 1px); }
-  80% { transform: translate(-1px, -2px); }
-  90% { transform: translate(2px, -1px); }
-  100% { transform: translate(0, 0); }
+@keyframes animateGrain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(5%, -15%); }
+  40% { transform: translate(-5%, 15%); }
+  50% { transform: translate(-15%, -5%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 10%); }
+  80% { transform: translate(-10%, -5%); }
+  90% { transform: translate(10%, 5%); }
 }
 
 .grain {
-  background-image: url("/grain.jpg");
-  background-repeat: repeat;
-  background-size: 30%;
-  mix-blend-mode: overlay;
-  opacity: 0.5;
-  animation: grain 1s steps(10) infinite;
+  background-image: url("/noise.png"); 
+  height: 300%; 
+  width: 300%;
+  position: fixed; 
+  top: -100%;
+  left: -100%;
+  opacity: 0.3; 
+  mix-blend-mode: overlay; 
+  animation: animateGrain 8s steps(10) infinite; 
   pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  z-index: 0; 
 }
